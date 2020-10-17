@@ -75,3 +75,6 @@ venv/
 
 # pychache
 __pycache__/
+
+# .docx
+*.docx
