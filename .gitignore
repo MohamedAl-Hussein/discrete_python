@@ -72,3 +72,6 @@ fabric.properties
 
 # virtual env
 venv/
+
+# pychache
+__pycache__/
