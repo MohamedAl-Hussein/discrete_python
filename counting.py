@@ -89,7 +89,7 @@ def pascals_triangle(depth):
 
         # calculate the binomial values for the current depth and append to the row
         for j in range(0, i + 1):
-            value = f" {int(C(i, j))} "
+            value = f" {int(round(C(i, j)))} "
             row += value
 
         # update the bottom row width with the width of the bottom row
