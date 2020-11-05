@@ -11,6 +11,10 @@ def P(n, k, i=1):
     :return: nPk
     """
 
+    # P(n,0) = 1
+    if k == 0:
+        return 1
+
     # we have reached the end of the sequence at i=k
     if i == k:
         return n - i + 1
@@ -29,6 +33,10 @@ def C(n, k, i=1):
     :param i: the position in the sequence
     :return: nCk
     """
+
+    # C(n,0) = 1
+    if k == 0:
+        return 1
 
     # we have reached the end of the sequence at i=k
     if i == k:
