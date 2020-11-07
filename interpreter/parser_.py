@@ -34,8 +34,9 @@ class Parser:
     def logical_equivalence(self):
         result = self.conditional_expr()
 
-        self.advance()
-        result = EquivalenceNode(result, self.conditional_expr())
+        while self.current_token is not None and self.current_token.type == TokenType.EQUIVALENT:
+            self.advance()
+            result = EquivalenceNode(result, self.conditional_expr())
 
         return result
 
