@@ -3,7 +3,7 @@ A simple math interpreter for propositional logic.
 
 ## **Tokens**
 
-* `[a-zA-Z]` propositional variable
+* `[a-zA-Z]+` propositional variable
 * `&&` logical and
 * `||` logical or
 * `~` negation
@@ -31,7 +31,13 @@ A simple math interpreter for propositional logic.
 
 * **Variable**: A character or sequence of characters
 * **Binary Expression**: Two **Variable** or **Compound Expression** types separated by `&&`, `||`, `^`, `-->`, or `<-->`
-* **Unary Expression**: `~` followed by a **Variable**, `(`, or `~`
+* **Unary Expression**: `~` followed by a **Variable**, `(`, or **Unary Expression**
 * **Quantification**: `forall` or `exists` followed by a **Variable** or `(`
 * **Compound Expression**: A combination of two or more **Binary Expression** or **Unary Expression** types
 * **Comparison**: Two **Variable**, **Unary**, **Binary**, **Quantification**, or **Compound Expression** types separated by `==`
+
+## **Parse Order**
+1. **Comparison**
+2. **Conditional Expression**
+3. **Binary Expression**
+4. **Unary Expression**, **Variable**, **Quantification**
