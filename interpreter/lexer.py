@@ -25,6 +25,7 @@ class Lexer:
             elif re.search(CHARACTERS, self.current_char):
                 yield self.generate_variable()
             elif self.current_char == '~':
+                # FIXME: currently breaks when negating a quantifier
                 self.advance()
                 yield Token(TokenType.NEGATION)
             elif self.current_char in SYMBOLS:
